@@ -1,0 +1,52 @@
+{% extends 'app/base.html' %}
+{% block content %}
+
+{% load static %}
+
+
+<head> 
+    
+    <link rel="stylesheet" href="{% static 'css/app1/signup_style.css' %}">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+
+        <div class="container" id="container">
+          
+         
+
+            <div class="form-container sign-in">
+                
+                <form method="post" action="{% url 'savedata' %}">
+                    {% csrf_token %}
+                    <h1>Register Here </h1>
+                    
+                    <input type="text" name="Name" required placeholder="Enter Name">
+                    <input type="email" name="email" required placeholder="Enter Email">
+                    <input type="text" name="number" required placeholder="Enter Phone no.">
+                    <input type="text" name="city" required placeholder="Enter City">
+                    <input type="password" name="password" required placeholder="Enter password">
+            
+                    <button>Submit</button>
+                </form>
+            </div>
+    
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back</h1>
+                        <p>Enter your details to access feature of this site</p>
+                        <button class="hidden" id="login">SignIn</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello Dear</h1>
+                        <p>Enter your details and let's get start it</p>
+                        <!-- <button class="hidden" id="register">SignUp</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock%}
